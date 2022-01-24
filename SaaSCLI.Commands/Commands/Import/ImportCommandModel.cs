@@ -16,8 +16,8 @@
 
 			return new ImportCommandModel()
 			{
-				Product = commandSplited[2],
-				FilePath = commandSplited[3]
+				Product = commandSplited[1],
+				FilePath = commandSplited[2]
 			};
 		}
 	}
