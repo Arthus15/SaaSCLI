@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Parsers.Library\Parsers.Library.csproj" />
+    <ProjectReference Include="..\SaaSCLI.Infrastructure.MySQL\SaaSCLI.Infrastructure.MySQL.csproj" />
   </ItemGroup>
 
 </Project>

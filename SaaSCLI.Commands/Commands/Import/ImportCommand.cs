@@ -1,13 +1,17 @@
 ﻿using Parsers.Library.Global;
+using SaaSCLI.Infrastructure.Entities;
+using SaaSCLI.Infrastructure.MySQL;
 
 namespace SaaSCLI.Commands.Commands.Import
 {
 	public class ImportCommand : ICommand
 	{
 		private readonly IGlobalParser _parser;
-		public ImportCommand(IGlobalParser parser)
+		private readonly IDummyContext _context;
+		public ImportCommand(IGlobalParser parser, IDummyContext context)
 		{
 			_parser = parser;
+			_context = context;
 		}
 
 		public bool CanExecute(string commandName) =>
@@ -18,8 +22,10 @@ namespace SaaSCLI.Commands.Commands.Import
 			var importCommand = ImportCommandModel.Parse(command);
 			Validate();
 
-			if (!_parser.TryParse(importCommand.FilePath, typeof(ImportCommandModel), out object result))
+			if (!_parser.TryParse(importCommand.FilePath, typeof(FeedProduct), out object result))
 				return 1;
+
+			_context.FeedProductRepo.Add((result as FeedProduct)!);
 
 			return 0;
 

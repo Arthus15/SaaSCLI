@@ -4,8 +4,8 @@ using SaaSCLI.Infrastructure.Repository;
 
 namespace SaaSCLI.Infrastructure.MySQL
 {
-	public class DummyContext
+	public class DummyContext: IDummyContext
 	{
-		private readonly IRepository<FeedProduct> _feedProductRepo = new FeedProductRepository();
+		public IRepository<FeedProduct> FeedProductRepo { get; } = new FeedProductRepository();
 	}
 }

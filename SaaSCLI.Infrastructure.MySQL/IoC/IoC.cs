@@ -9,7 +9,7 @@ namespace SaaSCLI.Infrastructure.MySQL.IoC
 	{
 		public static void RegisterMySQLRepos(this IServiceCollection services)
 		{
-			services.AddTransient<DummyContext>();
+			services.AddTransient<IDummyContext, DummyContext>();
 			services.AddTransient<IRepository<FeedProduct>, FeedProductRepository>();
 		}
 	}
