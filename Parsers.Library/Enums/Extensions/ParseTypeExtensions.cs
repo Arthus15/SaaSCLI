@@ -2,14 +2,14 @@
 {
 	public static class ParseTypeExtensions
 	{
-		public static ParseType FromFileName(string fileName)
+		public static FileType FromFileName(string fileName)
 		{
 			var extension = fileName.Split(".").Last();
 
 			return extension.ToLower() switch
 			{
-				"json" => ParseType.Json,
-				"yaml" => ParseType.Yaml,
+				"json" => FileType.Json,
+				"yaml" => FileType.Yaml,
 				_ => throw new NotSupportedException($"Extension {extension} not supported")
 			};
 		}

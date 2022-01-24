@@ -1,6 +1,7 @@
 ﻿using Parsers.Library.Global;
 using SaaSCLI.Infrastructure.Entities;
 using SaaSCLI.Infrastructure.MySQL;
+using System.Text.Json.Nodes;
 
 namespace SaaSCLI.Commands.Commands.Import
 {
@@ -22,10 +23,19 @@ namespace SaaSCLI.Commands.Commands.Import
 			var importCommand = ImportCommandModel.Parse(command);
 			Validate();
 
-			if (!_parser.TryParse(importCommand.FilePath, typeof(FeedProduct), out object result))
-				return 1;
+			if (!_parser.TryParse(importCommand.FilePath, typeof(FeedProduct[]), out object result, (text) =>
+				{
+					var jsonObject = JsonObject.Parse(text);
+					var jsonArray = (JsonArray)jsonObject!["products"]!;
 
-			_context.FeedProductRepo.Add((result as FeedProduct)!);
+					return jsonArray.ToJsonString();
+				}))
+			{
+				return 1;
+			}
+
+			foreach (var product in (result as FeedProduct[])!)
+				_context.FeedProductRepo.Add(product);
 
 			return 0;
 

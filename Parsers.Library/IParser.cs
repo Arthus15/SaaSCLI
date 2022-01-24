@@ -9,7 +9,7 @@ namespace Parsers.Library
 {
 	public interface IParser
 	{
-		bool CanParse(ParseType fileType);
+		bool CanParse(FileType fileType);
 		object Parse(string objectString, Type resultObjectType);
 	}
 }

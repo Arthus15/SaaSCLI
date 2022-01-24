@@ -5,9 +5,9 @@ namespace Parsers.Library.Parsers.Json
 {
 	internal class JsonParser : IParser
 	{
-		public const ParseType FileType = ParseType.Json;
+		public const FileType FileType = Enums.FileType.Json;
 
-		public bool CanParse(ParseType fileType) => FileType == fileType;
+		public bool CanParse(FileType fileType) => FileType == fileType;
 
 		public object Parse(string objectString, Type resultObjectType) =>
 		JsonConvert.DeserializeObject(objectString, resultObjectType);

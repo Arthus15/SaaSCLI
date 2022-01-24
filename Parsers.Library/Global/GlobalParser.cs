@@ -1,4 +1,5 @@
-﻿using Parsers.Library.Enums.Extensions;
+﻿using System.Text.Json.Nodes;
+using Parsers.Library.Enums.Extensions;
 using SystemIO.Library;
 
 namespace Parsers.Library.Global
@@ -13,12 +14,15 @@ namespace Parsers.Library.Global
 			_systemIo = systemIo;
 		}
 
-		public bool TryParse(string filePath, Type resultObjectType, out object result)
+		public bool TryParse(string filePath, Type resultObjectType, out object result, Func<string, string> formatFunc = null)
 		{
 			try
 			{
 				var type = ParseTypeExtensions.FromFileName(filePath);
 				var fileText = _systemIo.File.ReadAllText(filePath);
+
+				if (formatFunc is not null)
+					fileText = formatFunc(fileText);
 
 				var parser = _parsers.First(x => x.CanParse(type));
 

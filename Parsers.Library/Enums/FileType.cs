@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parsers.Library.Enums
 {
-	public enum ParseType
+	public enum FileType
 	{
 		Json,
 		Yaml
