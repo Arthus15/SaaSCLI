@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Parsers.Library\Parsers.Library.csproj" />
     <ProjectReference Include="..\SaaSCLI.Commands\SaaSCLI.Commands.csproj" />
+    <ProjectReference Include="..\SystemIO.Library\SystemIO.Library.csproj" />
   </ItemGroup>
 
 </Project>

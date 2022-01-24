@@ -1,14 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Parsers.Library.IoC;
 using SaaSCLI.Commands.Commands;
 using SaaSCLI.Commands.Commands.Import;
 using SaaSCLI.Commands.Executor;
+using SystemIO.Library.IoC;
 
 var builder = Host.CreateDefaultBuilder();
 builder.ConfigureServices((_, services) =>
 {
 	services.AddTransient<ICommand, ImportCommand>();
 	services.AddTransient<ICommandExec, CommandExec>();
+	services.RegisterSystemIO();
+	services.RegisterParsers();
 });
 
 var host = builder.Build();
