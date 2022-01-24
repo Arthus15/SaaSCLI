@@ -6,14 +6,14 @@
                 "Call Center"
             ],
             "twitter": "@freshdesk",
-            "title": "Freshdesk"
+            "name": "Freshdesk"
         },
         {
             "categories": [
                 "CRM",
                 "Sales Management"
             ],
-            "title": "Zoho"
+            "name": "Zoho"
         }
     ]
 }

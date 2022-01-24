@@ -23,13 +23,18 @@ namespace SaaSCLI.Commands.Commands.Import
 			var importCommand = ImportCommandModel.Parse(command);
 			Validate();
 
-			if (!_parser.TryParse(importCommand.FilePath, typeof(FeedProduct[]), out object result, (text) =>
-				{
-					var jsonObject = JsonObject.Parse(text);
-					var jsonArray = (JsonArray)jsonObject!["products"]!;
 
-					return jsonArray.ToJsonString();
-				}))
+			if (!_parser.TryParse(importCommand.FilePath, typeof(FeedProduct[]), out object result, (text) =>
+			    {
+				    if (importCommand.FilePath.Split('.').Last() == "json")
+				    {
+					    var jsonObject = JsonObject.Parse(text);
+					    var jsonArray = (JsonArray)jsonObject!["products"]!;
+					    return jsonArray.ToJsonString();
+					}
+
+				    return text;
+			    }))
 			{
 				return 1;
 			}

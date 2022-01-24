@@ -35,12 +35,12 @@ namespace SaaSCLI.Commands.UnitTests.Commands.Import
 				{
 					var parserMock = new Mock<IGlobalParser>();
 					object result;
-					parserMock.Setup(x => x.TryParse(It.IsAny<string>(), It.IsAny<Type>(), out result))
-						.Returns(true).Callback((string a, Type p, out object c) =>
+					parserMock.Setup(x => x.TryParse(It.IsAny<string>(), It.IsAny<Type>(), out result, It.IsAny<Func<string, string>>()))
+						.Returns(true).Callback((string a, Type p, out object c, Func<string, string> func) =>
 						{
 							c = new FeedProduct()
 							{
-								Categories = "Test"
+								Categories = new []{"Test"}
 							};
 						});
 					return parserMock;
