@@ -4,6 +4,7 @@ using Parsers.Library.IoC;
 using SaaSCLI.Commands.Commands;
 using SaaSCLI.Commands.Commands.Import;
 using SaaSCLI.Commands.Executor;
+using SaaSCLI.Infrastructure.MySQL.IoC;
 using SystemIO.Library.IoC;
 
 var builder = Host.CreateDefaultBuilder();
@@ -13,6 +14,7 @@ builder.ConfigureServices((_, services) =>
 	services.AddTransient<ICommandExec, CommandExec>();
 	services.RegisterSystemIO();
 	services.RegisterParsers();
+	services.RegisterMySQLRepos();
 });
 
 var host = builder.Build();
