@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaaSCLI", "SaaSCLI\SaaSCLI.csproj", "{E6E271B6-8C9B-4F0F-8849-C0EDBB759752}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{400EF3DB-AD76-4257-BA25-6C690C4363BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Core", "2. Core", "{4AC4D7E4-6BBD-4E78-BEEC-92451B0F822D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infrastructure", "3. Infrastructure", "{CDA5AC84-00CA-4F54-81FE-689BF00A83F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaaSCLI.Commands", "SaaSCLI.Commands\SaaSCLI.Commands.csproj", "{19184374-14B8-45CC-96DC-577D49F7B2E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6E271B6-8C9B-4F0F-8849-C0EDBB759752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E271B6-8C9B-4F0F-8849-C0EDBB759752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E271B6-8C9B-4F0F-8849-C0EDBB759752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E271B6-8C9B-4F0F-8849-C0EDBB759752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19184374-14B8-45CC-96DC-577D49F7B2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19184374-14B8-45CC-96DC-577D49F7B2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19184374-14B8-45CC-96DC-577D49F7B2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19184374-14B8-45CC-96DC-577D49F7B2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6E271B6-8C9B-4F0F-8849-C0EDBB759752} = {400EF3DB-AD76-4257-BA25-6C690C4363BA}
+		{19184374-14B8-45CC-96DC-577D49F7B2E9} = {4AC4D7E4-6BBD-4E78-BEEC-92451B0F822D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79BE6828-0166-4093-835E-7952E9BA556B}
+	EndGlobalSection
+EndGlobal
