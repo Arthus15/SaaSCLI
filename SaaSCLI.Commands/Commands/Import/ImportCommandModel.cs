@@ -9,12 +9,15 @@
 
 		public static ImportCommandModel Parse(string command)
 		{
-			var commandSplited = command.Split(" ")[1..3];
+			var commandSplited = command.Split(" ");
+
+			if (commandSplited.Length is < 3)
+				throw new ArgumentException("Missing parameters in command");
 
 			return new ImportCommandModel()
 			{
-				Product = commandSplited[0],
-				FilePath = commandSplited[1]
+				Product = commandSplited[2],
+				FilePath = commandSplited[3]
 			};
 		}
 	}

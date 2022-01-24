@@ -16,8 +16,6 @@ namespace SaaSCLI.Commands.Commands.Import
 			var importCommand = ImportCommandModel.Parse(command);
 			Validate();
 
-			
-
 			void Validate()
 			{
 				if (string.IsNullOrWhiteSpace(importCommand.Product))
