@@ -9,6 +9,6 @@ namespace SaaSCLI.Commands.Commands
 	public interface ICommand
 	{
 		bool CanExecute(string commandName);
-		void Execute(string command);
+		int Execute(string command);
 	}
 }

@@ -17,7 +17,12 @@ namespace SaaSCLI.Commands.Executor
 
 			Console.WriteLine($"Executing {command}...");
 
-			commandToBeExecute.Execute(command);
+			var result = commandToBeExecute.Execute(command);
+
+			if (result == 0)
+				Console.WriteLine("Command finished successfully");
+			else
+				Console.Error.WriteLine("Something went wrong");
 
 			void Validate()
 			{

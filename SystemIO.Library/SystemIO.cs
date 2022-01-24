@@ -5,13 +5,13 @@ namespace SystemIO.Library
 {
 	public class SystemIO : ISystemIO
 	{
-		public readonly ISystemIOFile _file;
-		public readonly ISystemIOPath _path;
+		public ISystemIOFile File { get; }
+		public ISystemIOPath Path { get; }
 
 		public SystemIO(ISystemIOFile file, ISystemIOPath path)
 		{
-			_file = file;
-			_path = path;
+			File = file;
+			Path = path;
 		}
 	}
 

@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Parsers.Library.Global;
 
 namespace SaaSCLI.Commands.Commands.Import
 {
 	public class ImportCommand : ICommand
 	{
+		private readonly IGlobalParser _parser;
+		public ImportCommand(IGlobalParser parser)
+		{
+			_parser = parser;
+		}
+
 		public bool CanExecute(string commandName) =>
 			commandName.Equals(ImportCommandModel.CommnadKey, StringComparison.CurrentCultureIgnoreCase);
 
-		public void Execute(string command)
+		public int Execute(string command)
 		{
 			var importCommand = ImportCommandModel.Parse(command);
 			Validate();
+
+			if (!_parser.TryParse(importCommand.FilePath, typeof(ImportCommandModel), out object result))
+				return 1;
+
+			return 0;
 
 			void Validate()
 			{

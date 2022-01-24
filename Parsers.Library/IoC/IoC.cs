@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Parsers.Library.Json;
-using Parsers.Library.Yaml;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Parsers.Library.Global;
+using Parsers.Library.Parsers.Json;
+using Parsers.Library.Parsers.Yaml;
 
 namespace Parsers.Library.IoC
 {
@@ -15,6 +11,7 @@ namespace Parsers.Library.IoC
 		{
 			services.AddTransient<IParser, JsonParser>();
 			services.AddTransient<IParser, YamlParser>();
+			services.AddTransient<IGlobalParser, GlobalParser>();
 		}
 	}
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SystemIO.Library.SystemIOFile;
+using SystemIO.Library.SystemIOPath;
 
 namespace SystemIO.Library
 {
-	internal interface ISystemIO
+	public interface ISystemIO
 	{
+		ISystemIOFile File { get; }
+		ISystemIOPath Path { get; }
 	}
 }

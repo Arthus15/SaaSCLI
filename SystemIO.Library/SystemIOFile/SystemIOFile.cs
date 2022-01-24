@@ -8,5 +8,9 @@ namespace SystemIO.Library.SystemIOFile
 {
 	internal class SystemIOFile: ISystemIOFile
 	{
+		public string ReadAllText(string filePath)
+		{
+			return File.ReadAllText(filePath);
+		}
 	}
 }

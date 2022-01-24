@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemIO.Library.SystemIOFile
+namespace Parsers.Library.Enums
 {
-	public interface ISystemIOFile
+	public enum ParseType
 	{
-		string ReadAllText(string filePath);
+		Json,
+		Yaml
 	}
 }

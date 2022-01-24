@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
+using Parsers.Library.Enums;
 
-namespace Parsers.Library.Json
+namespace Parsers.Library.Parsers.Json
 {
 	internal class JsonParser : IParser
 	{
-		public const string FileType = "json";
+		public const ParseType FileType = ParseType.Json;
 
-		public bool CanParse(string fileType) => FileType.Equals(fileType, StringComparison.CurrentCultureIgnoreCase);
+		public bool CanParse(ParseType fileType) => FileType == fileType;
 
 		public object Parse(string objectString, Type resultObjectType) =>
 		JsonConvert.DeserializeObject(objectString, resultObjectType);
