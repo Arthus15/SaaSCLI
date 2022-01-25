@@ -14,10 +14,13 @@
 			if (commandSplited.Length is < 3)
 				throw new ArgumentException("Missing parameters in command");
 
+			var path = commandSplited[2..commandSplited.Length];
+
+
 			return new ImportCommandModel()
 			{
 				Product = commandSplited[1],
-				FilePath = commandSplited[2]
+				FilePath = string.Join(' ',path)
 			};
 		}
 	}
