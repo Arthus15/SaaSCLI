@@ -13,7 +13,7 @@ This is the provided solution for the a Technical Test. In this case the test wa
 
 Database solution will be paste on here and for the code some notes will be added to complete the solution.
 
-##Database
+## Database
 Instead of a MYSQL database a MSSQL has been used.
 
 1 ->
@@ -111,10 +111,10 @@ The code is splitted into 4 tiers:
  6. Not a real CLI/bash.
  ## Considerations:
  
- ###Instalation steps
- [https://github.com/Arthus15/SaaSCLI/releases/tag/Final](Release v1.0.0)
+ ### Instalation steps
+ [SaaSCLI v1.0.0](https://github.com/Arthus15/SaaSCLI/releases/tag/Final)
  
- ###How to run your code/test
+ ### How to run your code/test
  Easiest way will be open visual studio and running the integration test/Run the SaaSCLi solution. 
  **yaml file attributes where wrong named, correction was made
  
