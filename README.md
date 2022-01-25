@@ -100,7 +100,7 @@ The code is splitted into 4 tiers:
  2. All components are Test Friendly providing an abstraction i.e. ISystemIO 
  3. SOLID patterns where heavily applicated.
  4. Autowired pattern provide so new commands can be easily added.
- 5. No externa libraries for command parsing or executiong where used.
+ 5. No external libraries for command parsing or executiong where used.
  
  ### Bad Tips
  1. No logger injected.
