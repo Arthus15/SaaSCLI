@@ -112,7 +112,7 @@ The code is splitted into 4 tiers:
  ## Considerations:
  
  ###Instalation steps
- Link for release will be paste here. Download the zip and run the SaaSCLI.exe
+ [https://github.com/Arthus15/SaaSCLI/releases/tag/Final](Release v1.0.0)
  
  ###How to run your code/test
  Easiest way will be open visual studio and running the integration test/Run the SaaSCLi solution. 
